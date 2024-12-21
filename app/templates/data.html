@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submitted Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .data-container {
+            margin-top: 20px;
+        }
+        .data-entry {
+            background-color: #f4f4f4;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Submitted Data</h1>
+    
+    <div class="data-container">
+        {% for entry in all_data %}
+            <div class="data-entry">
+                <pre>{{ entry.data | tojson(indent=2) }}</pre>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <!-- Button to navigate back to the main page -->
+    <a href="/"><button>Back to Form</button></a>
+</body>
+</html>

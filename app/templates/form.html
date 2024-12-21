@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamic Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            margin-top: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <form id="dynamic-form" method="post">
+        <div id="inputs">
+            <input type="text" name="name0" placeholder="Enter value">
+        </div>
+        <button type="button" id="add-input">Add</button>
+        <button type="submit">Submit</button>
+    </form>
+
+    <div>
+        <a href="/data"><button>Go to Data</button></a>
+    </div>
+
+    <script>
+        let count = 1;
+        $('#add-input').click(function() {
+            $('#inputs').append(`<input type="text" name="name${count}" placeholder="Enter value">`);
+            count++;
+        });
+    </script>
+</body>
+</html>
