@@ -75,5 +75,5 @@ pip install -r requirements.txt
 ### 8. Запустите приложение
 
 ```
-python run.py
+python3 run.py
 ```
